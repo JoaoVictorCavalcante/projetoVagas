@@ -95,4 +95,26 @@
       //RETORNA O ID
         return $this->connection->lastInsertId();
      }
+
+     /**
+      * METODO RESPONSAVEL POR EXECUTAR UMA CONSULTA NO BANCO DE DADOS
+      * @param string $where
+      * @param string $order
+      * @param string $limit
+      * @return \PDOStatement
+      */
+     public function select($where = null,$order = null,$limit = null,$fields = '*'){
+       //DADOS DA QUERY
+
+       $where = strlen($where) ? 'WHERE'.$where : '';
+       $where = strlen($order) ? 'WHERE'.$order : '';
+       $where = strlen($limit) ? 'WHERE'.$limit : '';
+      
+       //MONTA A QUERY
+      $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order. ' '.$limit;
+      
+      //EXECUTA A QUERY
+       return $this->execute($query);
+      
+     }
     }

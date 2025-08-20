@@ -3,7 +3,7 @@
  namespace App\Entity;
 
  use App\Db\DataBase;
-
+ use \PDO;
  class Vaga{
 
     /**
@@ -55,6 +55,19 @@
             
         ]);
        return true;
+    }
+
+    /**
+     * RESPONSAVEL POR OBTER AS VAGAS DO BANCO
+     * @param mixed $where
+     * @param mixed $order
+     * @param mixed $limit
+     * @return array
+     */
+    public static function getVagas($where = null, $order = null, $limit = null){
+         
+        return (new DataBase('vagas'))->select($where,$order,$limit)
+                                             ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
     }
 
