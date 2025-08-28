@@ -6,18 +6,18 @@
         </a>
     </section>
 
-      <h2>Cadastrar Vaga</h2>
+      <h2><?=TITLE?></h2>
 
       <form method="post">
         <div class="form-group">
             <label>Titulo</label>
-            <input type="text" class="form-control" name="titulo">
+            <input type="text" class="form-control" name="titulo" value="<?=$obVaga->titulo?>">
 
         </div>
 
         <div class="form-group">
             <label>Descrição</label>
-            <textarea class="form-control" name="descricao" rows="5"></textarea>
+            <textarea class="form-control" name="descricao" rows="5"><?=$obVaga->descricao?></textarea>
         </div>
 
 
@@ -26,14 +26,14 @@
             <label>Status</label></div>
               <div class="form-check form-check-inline">
                 <label class="form-control">
-                    <input type="radio" name="ativo" checked value="s">Ativo
+                    <input type="radio" name="ativo" checked value="s"  >Ativo
                 </label>
               </div>    
         
 
         <div class="form-check form-check-inline">
                 <label class="form-control">
-                    <input type="radio" name="ativo" value="n">Inativo
+                    <input type="radio" name="ativo" value="n" <?=$obVaga->ativo == 'n' ? 'checked' : ''?>>Inativo
                 </label>
         </div>    
     </div>

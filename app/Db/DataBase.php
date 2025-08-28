@@ -30,7 +30,7 @@
      * SENHA DO BANCO DE DADOS
      * @var string
      */
-    const PASS = '123';
+    const PASS = '';
 
    /**
     * NOME DA TABELA
@@ -101,14 +101,14 @@
       * @param string $where
       * @param string $order
       * @param string $limit
-      * @return \PDOStatement
+      * @return PDOStatement
       */
      public function select($where = null,$order = null,$limit = null,$fields = '*'){
        //DADOS DA QUERY
 
-       $where = strlen($where) ? 'WHERE'.$where : '';
-       $where = strlen($order) ? 'WHERE'.$order : '';
-       $where = strlen($limit) ? 'WHERE'.$limit : '';
+       $where = strlen($where) ? ' WHERE '.$where : '';
+       $order = strlen($order) ? ' ORDER BY '.$order : '';
+       $limit = strlen($limit) ? ' LIMIT '.$limit : '';
       
        //MONTA A QUERY
       $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order. ' '.$limit;
@@ -117,4 +117,38 @@
        return $this->execute($query);
       
      }
+    
+     /**
+      * METODO DE ATUALIZACOE DO DB
+      * @param string $where
+      * @param array $values [field => value]
+      * @return boolean
+      */
+     public function update($where,$values){
+      
+      //DADOS DA QUERY
+      $fields = array_keys($values);
+
+      //MONTA A QUERY
+      $query =' UPDATE '.$this->table.' SET '.implode('=?,',$fields).'=?  WHERE '.$where;
+      
+      //EXECUTA A QUERY
+      $this->execute($query,array_values($values));
+      return true;
+
+    }
+ 
+    /**
+     * DELETA DADOS DO BANCO
+     * @param string where
+     * return boolean
+     */
+    public function delete($where){
+       $query = ' DELETE FROM '.$this->table.' WHERE '.$where;
+
+       //EXECUTA A QUERY
+
+       $this->execute($query);
+       return true;
+    }
     }
