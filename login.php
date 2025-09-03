@@ -3,8 +3,18 @@
   require __DIR__.'/vendor/autoload.php';
 
    use \App\Entity\Vaga;
-
-   $vagas = Vaga::getVagas();
+   use \App\Entity\Login;
+   
+  Login::requereLogout();
+  $msg ='';
+  if(isset($_POST['cpf'],$_POST['senha'])){
+    $aluno = Aluno::getAlunoCpf($_POST['cpf']);
+    if(!$aluno instanceof Aluno || !password_verify(($_POST['senha'],$aluno->senha))){
+     $msg = "Usuario ou senha Incorretos!";
+    }else{
+      Login::login($aluno);
+    } 
+  }
    
 
    
