@@ -61,6 +61,8 @@
     public function excluir(){
         return (new DataBase('vagas'))->delete('id = '.$this->id);
     }
+
+    
     /**
      * METODO RESPONSAVEL POR ATUALIZAR DADO DO DB
      * @return boolean

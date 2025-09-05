@@ -26,11 +26,10 @@
             <label>Status</label></div>
               <div class="form-check form-check-inline">
                 <label class="form-control">
-                    <input type="radio" name="ativo" checked value="s"  >Ativo
+                    <input type="radio" name="ativo" checked value="s">Ativo
                 </label>
               </div>    
         
-
         <div class="form-check form-check-inline">
                 <label class="form-control">
                     <input type="radio" name="ativo" value="n" <?=$obVaga->ativo == 'n' ? 'checked' : ''?>>Inativo

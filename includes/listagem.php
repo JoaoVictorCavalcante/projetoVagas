@@ -48,7 +48,7 @@
         </a>
     </section>
     <section>
-        <table class="table mt-3 bg-light text-dark">
+        <table class="table table-striped mt-3 bg-light text-dark">
             <thead>
                 <tr>
                     <th>ID</th>

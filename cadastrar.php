@@ -2,7 +2,7 @@
  
   require __DIR__.'/vendor/autoload.php';
  
-  define('TITLE','Cadastar Vaga');
+  define('TITLE','Cadastrar Vaga');
   use \App\Entity\Vaga;
 
   //echo "<pre>"; print_r($_POST); echo "</pre>";exit;
@@ -23,6 +23,6 @@
     exit;
   }
 
-  include __DIR__.'/includes/header.php';
-  include __DIR__.'/includes/formulario.php';
-  include __DIR__.'/includes/footer.php';
+  include __DIR__.'../includes/header.php';
+  include __DIR__.'../includes/formulario.php';
+  include __DIR__.'../includes/footer.php';

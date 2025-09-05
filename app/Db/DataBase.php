@@ -30,7 +30,7 @@
      * SENHA DO BANCO DE DADOS
      * @var string
      */
-    const PASS = '123';
+    const PASS = '';
 
    /**
     * NOME DA TABELA
