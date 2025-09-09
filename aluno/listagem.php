@@ -1,5 +1,7 @@
 <?php
 
+use App\Entity\Vaga;
+
     $mensagem = '';
     if(isset($_GET['status']))
         switch($_GET['status']){
@@ -12,6 +14,8 @@
     
         }
     $resultados = '';
+
+    $vagas = Vaga::getVagas();
     foreach($vagas as $vaga){
         $resultados .= '<tr>
                             <td>'.$vaga->id.'</td>
@@ -51,12 +55,14 @@
         <table class="table table-striped mt-3 bg-light text-dark">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Titulo</th>
-                    <th>Descricao</th>
-                    <th>Status</th>
-                    <th>Data</th>
-                    <th>Ações</th>
+                    <th>Nome</th>
+                    <th>Cpf</th>
+                    <th>Telefone</th>
+                    <th>Email Pessoal</th>
+                    <th>Email Institucional</th>
+                    <th>Curso</th>
+                    <th>Periodo</th>
+                    <th>Senha</th>
                 </tr>
             </thead>
             <tbody>

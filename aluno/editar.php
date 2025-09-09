@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 define('TITLE', 'Editar Vaga');
 use \App\Entity\Vaga;
@@ -8,7 +8,7 @@ use \App\Entity\Vaga;
 
 //VALIDACAO DO ID
 if (!isset($_GET['id']) or !is_numeric($_GET['id'])) {
-  header('location: index.php?status=error');
+  header('location: listar.php?status=error');
   exit;
 }
 
@@ -18,7 +18,7 @@ $obVaga = Vaga::getVaga($_GET['id']);
 
 //VALIDACAO VAGA
 if(!$obVaga instanceof Vaga){
-  header('location:index.php?status=error');
+  header('location:listar.php?status=error');
   exit;
 }
 
@@ -35,10 +35,10 @@ if (isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])) {
 
 
 
-  header('location: index.php?status=success');
+  header('location: listar.php?status=success');
   exit;
 }
 
-include __DIR__ . '../includes/header.php';
-include __DIR__ . '../formulario.php';
-include __DIR__ . '../includes/footer.php';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/formulario.php';
+include __DIR__ . '/../includes/footer.php';
