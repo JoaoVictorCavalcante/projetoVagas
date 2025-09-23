@@ -62,7 +62,7 @@
         return (new DataBase('alunos'))->delete('id = '.$this->id);
     }
 
-    public function getAlunos($where,$order,$limit){
+    public static function getAlunos($where,$order,$limit){
         return (new DataBase('alunos'))->select($where,$order,$limit)
                                        ->fetchAll(PD0::FETCH_CLASS,self::class);
     }

@@ -49,10 +49,12 @@
     <div class="container">
    
      <div class="jumbotron bg-danger">
-        <h1>WDEV Vagas</h1>
+        <h1>PROJETO VAGAS</h1> Vagas</h1>
         <p>Exemplo de CRUD com PHP orientado a objetos</p>
      </div>
-    
+     <a class="nav-link" href="/projetoVagas/index.php">Home</a>
+     <a class="nav-link" href="/projetoVagas/vaga/listar.php">VAGAS</a>
+     <a class="nav-link" href="/projetoVagas/aluno/listar.php">ALUNOS</a>
    
 
    

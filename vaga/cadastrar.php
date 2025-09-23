@@ -1,6 +1,6 @@
 <?php
  
-  require __DIR__.'/vendor/autoload.php';
+  require __DIR__.'/../vendor/autoload.php';
  
   define('TITLE','Cadastrar Vaga');
   use \App\Entity\Vaga;
@@ -19,10 +19,10 @@
 
     
 
-    header('location: index.php?status=success');
+    header('location: listar.php?status=success');
     exit;
   }
 
-  include __DIR__.'../includes/header.php';
-  include __DIR__.'../includes/formulario.php';
-  include __DIR__.'../includes/footer.php';
+  include __DIR__.'/../includes/header.php';
+  include __DIR__.'/formulario.php';
+  include __DIR__.'/../includes/footer.php';
