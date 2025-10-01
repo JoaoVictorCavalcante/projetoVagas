@@ -9,13 +9,17 @@
   
   $obVaga = new Vaga;
   //VALIDACAO DO POST-->
-  if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
+  if(isset($_POST['titulo'],$_POST['descricao'],$_POST['quantidade'],$_POST['remuneracao'],$_POST['data_abertura'],$_POST['data_fechamento'])){
   
     $obVaga->titulo = $_POST['titulo'];
     $obVaga->descricao = $_POST['descricao'];
-    $obVaga->ativo = $_POST['ativo'];
+    $obVaga->quantidade = $_POST['quantidade'];
+    $obVaga->remuneracao = $_POST['remuneracao'];
+    $obVaga->dataAbertura = $_POST['data_abertura'];
+    $obVaga->dataFechamento = $_POST['data_fechamento'];
 
     $obVaga->cadastrar();
+   
 
     
 

@@ -10,37 +10,37 @@
 
       <form method="post">
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Nome</label>
             <input type="text" class="form-control" name="nome" value="<?=$obAluno->nome?>">
 
         </div>
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Cpf</label>
             <input type="text" class="form-control" name="cpf" value="<?=$obAluno->cpf?>">
 
         </div>
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Email Pessoal</label>
             <input type="text" class="form-control" name="email_pessoal" value="<?=$obAluno->email_pessoal?>">
 
         </div>
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Email Institucional</label>
             <input type="text" class="form-control" name="email_institucional" value="<?=$obAluno->email_institucional?>">
 
         </div>
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Curso</label>
             <input type="text" class="form-control" name="curso" value="<?=$obAluno->curso?>">
 
         </div>
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Periodo</label>
             <input type="text" class="form-control" name="periodo" value="<?=$obAluno->periodo?>">
 
         </div>
         <div class="form-group">
-            <label>Titulo</label>
+            <label>Data</label>
             <input type="text" class="form-control" name="data" value="<?=$obAluno->data?>">
 
         </div>

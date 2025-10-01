@@ -1,6 +1,8 @@
 <?php
   namespace App\Entity;
-  use \App\Db\DataBase;
+
+  use App\Db\DataBase;
+  use \PDO;
 
    class Aluno{
     public $id;
@@ -64,7 +66,7 @@
 
     public static function getAlunos($where,$order,$limit){
         return (new DataBase('alunos'))->select($where,$order,$limit)
-                                       ->fetchAll(PD0::FETCH_CLASS,self::class);
+                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
 
     public function getAluno($id){

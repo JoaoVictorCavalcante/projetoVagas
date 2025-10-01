@@ -20,22 +20,32 @@
             <textarea class="form-control" name="descricao" rows="5"><?=$obVaga->descricao?></textarea>
         </div>
 
-
-    <div>
         <div class="form-group">
-            <label>Status</label></div>
-              <div class="form-check form-check-inline">
-                <label class="form-control">
-                    <input type="radio" name="ativo" checked value="s">Ativo
-                </label>
-              </div>    
+            <label>Quantidade</label>
+            <input type="text" class="form-control" name="quantidade" value="<?=$obVaga->quantidade?>">
+
+        </div>
+
+        <div class="form-group">
+            <label>Remuneracao</label>
+            <input type="text" class="form-control" name="remuneracao" value="<?=$obVaga->remuneracao?>">
+
+        </div>
+        <div class="form-group">
+            <label>Data Abertura</label>
+            <input type="text" class="form-control" name="data_abertura" value="<?=$obVaga->dataAbertura?>">
+
+        </div>
+
+        <div class="form-group">
+            <label>Data Fechamento</label>
+            <input type="text" class="form-control" name="data_fechamento" value="<?=$obVaga->dataFechamento?>">
+
+        </div>
+
+
         
-        <div class="form-check form-check-inline">
-                <label class="form-control">
-                    <input type="radio" name="ativo" value="n" <?=$obVaga->ativo == 'n' ? 'checked' : ''?>>Inativo
-                </label>
-        </div>    
-    </div>
+
 
     <div class="form-group">
         <button type="submit" class="btn btn-success">Enviar</button>

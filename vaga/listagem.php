@@ -21,8 +21,9 @@ use App\Entity\Vaga;
                             <td>'.$vaga->id.'</td>
                             <td>'.$vaga->titulo.'</td>
                             <td>'.$vaga->descricao.'</td>
-                            <td>'.($vaga->ativo == 's' ? 'Ativo' : 'Inativo').'</td>
-                            <td>'.date('d/m/Y à\s H:i:s',strtotime($vaga->data)).'</td>
+                            <td>'.$vaga->quantidade.'<td>
+                            <td>'.date('d/m/Y à\s H:i:s',strtotime($vaga->data_abertura)).'</td>
+                            <td>'.date('d/m/Y à\s H:i:s',strtotime($vaga->data_fechamento)).'</td>
                             <td>
                                <a href="editar.php?id='.$vaga->id.'">
                                <button type=button class="btn btn-primary">Editar</button>
@@ -58,9 +59,10 @@ use App\Entity\Vaga;
                     <th>ID</th>
                     <th>Titulo</th>
                     <th>Descricao</th>
-                    <th>Status</th>
-                    <th>Data</th>
-                    <th>Ações</th>
+                    <th>Quantidade</th>
+                    <th>Remuneracao</th>
+                    <th>Data Abertura</th>
+                    <th>Data Fechamento</th>
                 </tr>
             </thead>
             <tbody>

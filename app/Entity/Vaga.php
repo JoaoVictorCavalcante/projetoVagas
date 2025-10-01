@@ -25,16 +25,28 @@
     public $descricao;
 
     /**
-     * DEFINE A VAGA ATIVA
-     * @var string(s/n)
-     */
-    public $ativo;
-
-    /**
-     * DATA PUBLICACAO DA VAGA
+     * QUANTIDADE DE VAGAS
      * @var string
      */
-    public $data;
+    public $quantidade;
+
+    /**
+     * REMUNERAÇÃO VAGA
+     * @var
+     */
+    public $remuneracao;
+
+    /**
+     * DATA DE ABERTURA
+     * @var 
+     */
+    public $dataAbertura;
+
+    /**
+     * DATA DE FECHAMENTO
+     * @var 
+     */
+    public $dataFechamento;
 
     /**
      * CADASTRAR UMA VAGA 
@@ -43,14 +55,18 @@
    
     public function cadastrar(){
 
-        $this->data = date('Y-m-d H-i-s');
+        $this->dataAbertura = date('Y-m-d H-i-s');
+        $this->dataFechamento = date('Y-m-d H-i-s');
 
         $obDataBase = new DataBase('vagas');
         $this->id = $obDataBase->insert([
             'titulo' => $this->titulo,
             'descricao' => $this->descricao,
-            'ativo' => $this->ativo,
-            'data' => $this->data
+            'quantidade' => $this->quantidade,
+            'remuneracao' => $this->remuneracao,
+            'data_abertura' =>$this->dataAbertura,
+            'data_fechamento' =>$this->dataFechamento
+
 
             
         ]);
@@ -71,8 +87,8 @@
         return(new DataBase('vagas'))->update('id = '.$this->id,[
             'titulo' => $this->titulo,
             'descricao' => $this->descricao,
-            'ativo' => $this->ativo,
-            'data' => $this->data
+            'quantidade' => $this->quantidade,
+            'remuneracao' => $this->remuneracao
 
         ]);
 
